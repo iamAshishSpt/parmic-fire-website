@@ -1,4 +1,4 @@
-import { Droplets, BellRing, ShieldAlert, DoorClosed, CheckCircle2 } from 'lucide-react';
+import { PenTool, Wrench, ClipboardCheck, Radio, Flame, CheckCircle2 } from 'lucide-react';
 import VisualProductGallery from '@/components/VisualProductGallery';
 
 export default function ServicesPage() {
@@ -20,14 +20,17 @@ export default function ServicesPage() {
       <section className="pb-24 px-6 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          {/* Card 1: Fire Sprinkler & Water Systems */}
+          {/* Card 1: In-House Design & Engineering (The Foundation) */}
           <div className="bg-surface p-8 border border-border shadow-sm rounded-xl flex flex-col hover:border-[#F46707]/50 dark:hover:border-[#F46707] transition-colors">
             <div className="w-14 h-14 bg-blue-50 dark:bg-white/5 rounded-lg flex items-center justify-center mb-6">
-              <Droplets className="text-blue-600 dark:text-blue-400" size={32} strokeWidth={1.5} />
+              <PenTool className="text-blue-600 dark:text-blue-400" size={32} strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-bold uppercase tracking-tight mb-6 text-foreground">Fire Sprinkler & Water Systems</h3>
+            <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-foreground">In-House Design & CAD Engineering</h3>
+            <p className="text-foreground/80 font-light leading-relaxed mb-6">
+              Complete, compliant system design engineered locally in Tasmania to National Construction Code (NCC) and Australian Standards.
+            </p>
             <ul className="space-y-3 mt-auto">
-              {["Automatic Sprinklers", "Wall Wetting & Deluge", "Water Mist", "Hydrant & Hose Reels", "Fire Pumps & Static Water Tanks"].map((item, i) => (
+              {["BIM & 3D Spatial Coordination", "Hydraulic Calculations (AS2118)", "Fire Detection Design (AS1670)", "Building Act Accredited Practitioners", "Seamless Architect & Builder Integration"].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <CheckCircle2 className="text-[#F46707] mt-1 shrink-0" size={18} />
                   <span className="text-foreground/80 leading-snug">{item}</span>
@@ -36,60 +39,86 @@ export default function ServicesPage() {
             </ul>
           </div>
 
-          {/* Card 2: Fire Detection & Alarms */}
-          <div className="bg-surface p-8 border border-border shadow-sm rounded-xl flex flex-col hover:border-[#F46707]/50 dark:hover:border-[#F46707] transition-colors">
-            <div className="w-14 h-14 bg-red-50 dark:bg-white/5 rounded-lg flex items-center justify-center mb-6">
-              <BellRing className="text-red-600 dark:text-red-400" size={32} strokeWidth={1.5} />
-            </div>
-            <h3 className="text-2xl font-bold uppercase tracking-tight mb-6 text-foreground">Fire Detection & Alarms</h3>
-            <ul className="space-y-3 mt-auto">
-              {["Addressable & Conventional Early Warning Smoke Detection", "Thermal Detection", "Flame Detection", "Domestic Alarms", "EWIS", "BOWS"].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="text-[#F46707] mt-1 shrink-0" size={18} />
-                  <span className="text-foreground/80 leading-snug">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Card 4: Passive Fire Protection */}
-          <div className="bg-surface p-8 border border-border shadow-sm rounded-xl flex flex-col hover:border-[#F46707]/50 dark:hover:border-[#F46707] transition-colors">
-            <div className="w-14 h-14 bg-orange-50 dark:bg-white/5 rounded-lg flex items-center justify-center mb-6">
-              <DoorClosed className="text-amber-600 dark:text-amber-400" size={32} strokeWidth={1.5} />
-            </div>
-            <h3 className="text-2xl font-bold uppercase tracking-tight mb-6 text-foreground">Passive Fire Protection</h3>
-            <ul className="space-y-3 mt-auto">
-              {["Fire Doors", "Fire Separation", "Fire Shutters"].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <CheckCircle2 className="text-[#F46707] mt-1 shrink-0" size={18} />
-                  <span className="text-foreground/80 leading-snug">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Card 3: Fire Suppression & Special Hazards */}
-          <div className="bg-[#1A0F66] dark:bg-[#1A0F66] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-sm rounded-xl flex flex-col md:col-span-2 lg:col-span-3">
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="md:w-1/3">
-                <div className="w-14 h-14 bg-slate-100 dark:bg-white/10 rounded-lg flex items-center justify-center mb-6">
-                  <ShieldAlert className="text-[#F46707]" size={32} strokeWidth={1.5} />
+          {/* Card 2: Local Manufacturing & Fabrication (Our Unique Advantage) */}
+          <div className="bg-surface p-8 border border-border shadow-sm rounded-xl flex flex-col md:col-span-2 hover:border-[#F46707]/50 dark:hover:border-[#F46707] transition-colors">
+            <div className="flex flex-col md:flex-row gap-8 items-start h-full">
+              <div className="md:w-1/2 flex flex-col h-full">
+                <div className="w-14 h-14 bg-orange-50 dark:bg-white/5 rounded-lg flex items-center justify-center mb-6">
+                  <Wrench className="text-amber-600 dark:text-amber-400" size={32} strokeWidth={1.5} />
                 </div>
-                <h3 className="text-3xl font-bold uppercase tracking-tight mb-4 text-white dark:text-white">Fire Suppression & Special Hazards</h3>
-                <p className="text-white/70 font-light leading-relaxed">
-                  Advanced, specialized suppression systems designed for highly sensitive, marine, and extreme hazard environments.
+                <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-foreground">In-House Workshop & Fabrication</h3>
+                <p className="text-foreground/80 font-light leading-relaxed mb-6">
+                  Unlike competitors who rely on mainland suppliers, we manufacture and fabricate custom fire infrastructure locally at our Mornington workshop, eliminating shipping delays and ensuring strict quality control.
                 </p>
               </div>
-              
-              <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {["Argonite", "FM200", "CO2 (Low & High Pressure)", "VESDA", "Pyrogen", "Chemical Powder & Foam", "Marine & Vehicle Suppression", "Portable Extinguishers"].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3 bg-white/5 dark:bg-white/5 p-4 rounded-lg border border-white/10 dark:border-white/10 hover:border-[#F46707]/50 transition-colors">
-                    <CheckCircle2 className="text-[#F46707] shrink-0" size={20} />
-                    <span className="text-white dark:text-white/90 font-medium">{item}</span>
-                  </div>
-                ))}
+              <div className="md:w-1/2 mt-auto w-full">
+                <ul className="space-y-3">
+                  {["Custom Pipe Threading & Roll Grooving", "In-House Welding & Bracketry Fabrication", "Custom Fire Pump Skids & Manifolds", "Rapid Prototyping for Complex Sites", "Zero Mainland Freight Bottlenecks"].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="text-[#F46707] mt-1 shrink-0" size={18} />
+                      <span className="text-foreground/80 leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
+          </div>
+
+          {/* Card 3: AS1851 Maintenance & Digital Compliance */}
+          <div className="bg-surface p-8 border border-border shadow-sm rounded-xl flex flex-col hover:border-[#F46707]/50 dark:hover:border-[#F46707] transition-colors">
+            <div className="w-14 h-14 bg-green-50 dark:bg-white/5 rounded-lg flex items-center justify-center mb-6">
+              <ClipboardCheck className="text-green-600 dark:text-green-400" size={32} strokeWidth={1.5} />
+            </div>
+            <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-foreground">AS1851 Maintenance & Testing</h3>
+            <p className="text-foreground/80 font-light leading-relaxed mb-6">
+              Rigorous lifecycle management, defect rectification, and transparent compliance reporting for commercial and industrial facilities.
+            </p>
+            <ul className="space-y-3 mt-auto">
+              {["Comprehensive AS1851 Routine Servicing", "Uptick-Powered Digital Asset Management", "Real-Time Defect Quoting & Rectification", "Annual Fire Safety Statements (AFSS)", "24/7 Rapid Emergency Response SLA"].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle2 className="text-[#F46707] mt-1 shrink-0" size={18} />
+                  <span className="text-foreground/80 leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Card 4: Advanced Detection & Networked Alarms */}
+          <div className="bg-surface p-8 border border-border shadow-sm rounded-xl flex flex-col hover:border-[#F46707]/50 dark:hover:border-[#F46707] transition-colors">
+            <div className="w-14 h-14 bg-red-50 dark:bg-white/5 rounded-lg flex items-center justify-center mb-6">
+              <Radio className="text-red-600 dark:text-red-400" size={32} strokeWidth={1.5} />
+            </div>
+            <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-foreground">Advanced Detection Systems</h3>
+            <p className="text-foreground/80 font-light leading-relaxed mb-6">
+              Early warning and intelligent alarm networks designed for large-scale campuses, hospitals, and high-risk environments.
+            </p>
+            <ul className="space-y-3 mt-auto">
+              {["Analogue Addressable Fire Panels", "Fibre Optically Connected Campus Systems", "Graphical PC Management Interfaces", "EWIS & BOWS Integration", "Thermal & Flame Detection Tech"].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle2 className="text-[#F46707] mt-1 shrink-0" size={18} />
+                  <span className="text-foreground/80 leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Card 5: Suppression & Special Hazards */}
+          <div className="bg-surface p-8 border border-border shadow-sm rounded-xl flex flex-col hover:border-[#F46707]/50 dark:hover:border-[#F46707] transition-colors">
+            <div className="w-14 h-14 bg-purple-50 dark:bg-white/5 rounded-lg flex items-center justify-center mb-6">
+              <Flame className="text-purple-600 dark:text-purple-400" size={32} strokeWidth={1.5} />
+            </div>
+            <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-foreground">Special Hazard Suppression</h3>
+            <p className="text-foreground/80 font-light leading-relaxed mb-6">
+              Protecting mission-critical assets, data centers, and heavy industrial machinery with rapid-deployment suppression.
+            </p>
+            <ul className="space-y-3 mt-auto">
+              {["VESDA Aspirating Smoke Detection", "Gaseous Suppression (Argonite, FM200, CO2)", "Water Mist & Deluge Systems", "Commercial Kitchen Exhaust Suppression", "Marine & Heavy Vehicle Systems"].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle2 className="text-[#F46707] mt-1 shrink-0" size={18} />
+                  <span className="text-foreground/80 leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
         </div>
