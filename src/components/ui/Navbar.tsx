@@ -33,14 +33,13 @@ export function Navbar() {
       >
         {/* Left: Logo */}
         <Link href="/" className="flex items-center z-50 flex-shrink-0">
-          <Image
-            src="/parmic-logo.png"
-            alt="Parmic Fire Protection - Statewide"
-            width={600}
-            height={200}
-            // Responsive sizing breakdown below!
-            className="object-contain flex-shrink-0 w-auto self-center mr-4 sm:mr-6 md:mr-12 lg:mr-20 h-10 sm:h-12 md:h-14 lg:h-[72px]"
-            priority
+          <Image 
+            src="/parmic-logo.webp" 
+            alt="Parmic Fire Protection" 
+            width={200} 
+            height={60} 
+            className="h-10 md:h-12 w-auto object-contain" 
+            priority 
           />
         </Link>
 

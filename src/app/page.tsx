@@ -8,8 +8,11 @@ import {
   Calendar,
   Star,
   Map,
-  PenTool,
-  Hammer,
+  DraftingCompass,
+  Anvil,
+  ClipboardCheck,
+  Radio,
+  Flame,
   Wrench,
   ArrowRight,
 } from "lucide-react";
@@ -127,55 +130,77 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Block 1 */}
+            {/* Card 1 */}
             <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
               <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
-                <PenTool
+                <DraftingCompass
                   size={32}
                   className="text-[#1A0F66] dark:text-[#F46707]"
                 />
               </div>
               <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
-                Design & Fabrication
+                In-House Design & Engineering
               </h4>
               <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
-                Operating from our purpose-built Mornington facility with custom
-                plasma cutting and fabrication capabilities. We specialize in
-                custom Alternative Design Solutions compliant with all NCC & BCA
-                regulations.
+                Compliant system design engineered locally to AS 1670 and NCC standards.
               </p>
             </div>
 
-            {/* Block 2 */}
+            {/* Card 2 */}
             <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
               <div className="w-16 h-16 bg-[#F46707]/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#F46707]/20 transition-colors">
-                <Hammer size={32} className="text-[#F46707]" />
+                <Anvil size={32} className="text-[#F46707]" />
               </div>
               <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
-                Installation
+                Local Workshop Fabrication
               </h4>
               <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
-                Expert deployment of sprinklers, gas suppression, early-warning
-                detection grids, and passive fire measures across highly
-                sensitive and critical infrastructure environments.
+                Custom pipe threading and fabrication at our Mornington workshop, eliminating mainland delays.
               </p>
             </div>
 
-            {/* Block 3 */}
+            {/* Card 3 */}
             <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
               <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
-                <Wrench
+                <ClipboardCheck
                   size={32}
                   className="text-[#1A0F66] dark:text-[#F46707]"
                 />
               </div>
               <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
-                Maintenance & Servicing
+                AS 1851 Maintenance
               </h4>
               <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
-                Supported by our Mornington HQ and Launceston satellite branch,
-                ensuring rapid 24/7 statewide response and compliance with
-                Tasmanian Building Act Form 46 & 56 requirements.
+                Rigorous lifecycle management, testing, and Uptick-powered digital compliance.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
+              <div className="w-16 h-16 bg-[#F46707]/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#F46707]/20 transition-colors">
+                <Radio size={32} className="text-[#F46707]" />
+              </div>
+              <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
+                Advanced Detection
+              </h4>
+              <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
+                Intelligent, networked early warning systems for large-scale and high-risk environments.
+              </p>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
+              <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
+                <Flame
+                  size={32}
+                  className="text-[#1A0F66] dark:text-[#F46707]"
+                />
+              </div>
+              <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
+                Special Hazard Suppression
+              </h4>
+              <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
+                Rapid-deployment suppression including Gaseous, VESDA, and Water Mist systems.
               </p>
             </div>
           </div>

@@ -11,7 +11,7 @@ export default function ServicesPage() {
             Comprehensive Fire Protection Services
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 font-light leading-relaxed">
-            Install, maintain, and service across Tasmania.
+            End-to-end fire infrastructure: Design, manufacture, install, and maintain across Tasmania.
           </p>
         </div>
       </section>

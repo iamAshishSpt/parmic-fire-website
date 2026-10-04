@@ -17,11 +17,12 @@ export function Footer() {
         {/* Left Side: Accreditations & Logos */}
         <div className="md:w-1/2 flex flex-col gap-8">
           <Image
-            src="/parmic-logo.png"
+            src="/parmic-logo.webp"
             alt="Parmic Fire Protection"
-            width={600}
-            height={200}
-            className="h-24 md:h-32 lg:h-36 w-auto object-contain mb-6 block self-start"
+            width={200}
+            height={60}
+            className="h-10 md:h-12 w-auto object-contain block self-start mb-6"
+            priority
           />
           <div className="flex flex-col gap-6">
             <h4 className="font-bold uppercase tracking-widest text-sm text-white/50">
