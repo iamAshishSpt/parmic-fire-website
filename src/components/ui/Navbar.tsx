@@ -33,14 +33,16 @@ export function Navbar() {
       >
         {/* Left: Logo */}
         <Link href="/" className="flex items-center z-50 flex-shrink-0">
-          <Image 
-            src="/parmic-logo.webp" 
-            alt="Parmic Fire Protection" 
-            width={200} 
-            height={60} 
-            className="h-10 md:h-12 w-auto object-contain" 
-            priority 
-          />
+          <div className="bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg shadow-sm flex items-center justify-center">
+            <Image 
+              src="/parmic-logo.webp" 
+              alt="Parmic Fire Protection" 
+              width={200} 
+              height={60} 
+              className="h-8 md:h-10 w-auto object-contain" 
+              priority 
+            />
+          </div>
         </Link>
 
         {/* Center: Desktop Links */}

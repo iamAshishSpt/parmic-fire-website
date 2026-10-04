@@ -1,4 +1,6 @@
-import { Factory, Users, Ruler, GraduationCap, CheckCircle2, ShieldCheck, Award, FileText, ClipboardCheck, Zap } from 'lucide-react';
+"use client";
+
+import { Factory, CheckCircle2, ShieldCheck, Award, FileText, ClipboardCheck, Zap } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -10,7 +12,7 @@ export default function AboutPage() {
             Tasmanian Owned & Operated Since 1992
           </h1>
           <p className="text-xl md:text-3xl font-medium text-[#F46707] mb-6">
-            Proudly employing over 25 expert staff across the state.
+            Proudly employing a dedicated team of over 25 industry professionals across the state.
           </p>
           <p className="text-lg md:text-xl text-foreground/70 font-light leading-relaxed max-w-4xl mx-auto italic">
             "To be recognised by the Fire Industry, our customers, and the community at having achieved a level of excellence in the Design, Fabrication, Installation and Servicing of Fire Detection and Protection Systems."
@@ -27,20 +29,21 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-foreground">Our Workshop & Design Office</h2>
             </div>
             <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-              Operating from our expansive Mornington facility, purpose-built in 1996 to streamline and optimize our advanced fabrication operations.
+              Operating from our expansive Mornington facility, purpose-built in 1996, we house one of Tasmania's only fully integrated design and fabrication hubs. By keeping manufacturing local, we completely eliminate mainland shipping delays and supply chain bottlenecks for our clients.
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed">
-              A critical advantage of our infrastructure is the seamless, instantaneous communication between our adjacent design office and fabrication workshop. This physical proximity ensures that complex designs are executed with absolute precision, and any technical modifications are resolved on the spot.
+              A critical advantage of our infrastructure is the seamless communication between our in-house CAD/BIM engineering team and the adjacent fabrication workshop. This physical proximity ensures that complex designs to AS 1670 and NCC standards are executed with absolute precision, and any technical modifications are resolved on the spot.
             </p>
           </div>
           
           <div className="lg:w-1/2 w-full bg-background p-8 md:p-10 border border-border shadow-sm rounded-xl">
             <h3 className="text-2xl font-bold uppercase tracking-tight text-foreground mb-8 flex items-center gap-3">
-              <Factory className="text-[#F46707]" /> 
+              <Factory className="text-[#F46707]"/> 
               Facility Capabilities
             </h3>
             <ul className="space-y-5">
               {[
+                "In-house CAD drafting & 3D BIM spatial coordination",
                 "Custom plasma cutting profile/branch machine",
                 "Custom mobile welding and cutting benches",
                 "Upgraded manual handling (reducing lifts by 66%)",
@@ -66,7 +69,7 @@ export default function AboutPage() {
               <FileText className="text-[#F46707] mb-6" size={40} strokeWidth={1.5} />
               <h3 className="text-xl font-bold uppercase tracking-tight text-foreground mb-4">Regulatory Adherence</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Uncompromising commitment to AS1851-2012 maintenance standards alongside full adherence to the Tasmanian Building Act 2000 and Building Regulations 2004.
+                Uncompromising commitment to AS 1851-2012 maintenance standards alongside full adherence to the Tasmanian Building Act 2000 and Building Regulations 2004.
               </p>
             </div>
 
