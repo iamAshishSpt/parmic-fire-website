@@ -1,6 +1,7 @@
 import { Hero } from "@/components/ui/Hero";
 import { Services } from "@/components/ui/Services";
 import { Projects } from "@/components/ui/Projects";
+import ComplianceAuthority from "@/components/ComplianceAuthority";
 import Link from "next/link";
 import {
   ShieldCheck,
@@ -50,6 +51,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ComplianceAuthority />
 
       {/* Trusted Partners Marquee */}
       <section className="py-12 bg-white dark:bg-background overflow-hidden relative border-y border-border/50">
