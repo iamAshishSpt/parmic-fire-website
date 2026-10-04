@@ -1,5 +1,4 @@
 import { Hero } from "@/components/ui/Hero";
-import { Services } from "@/components/ui/Services";
 import { Projects } from "@/components/ui/Projects";
 import ComplianceAuthority from "@/components/ComplianceAuthority";
 import Link from "next/link";
@@ -23,7 +22,7 @@ export default function Home() {
       <Hero />
 
       {/* Trust Bar / Statistics Strip */}
-      <section className="bg-[#F46707] text-white py-12 px-6 md:px-12 lg:px-24">
+      <section id="explore-section" className="bg-[#F46707] text-white py-12 px-6 md:px-12 lg:px-24 scroll-mt-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-white/20">
           <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
             <Calendar size={32} className="mb-4 text-white/80" />
@@ -131,84 +130,98 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
-              <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
-                <DraftingCompass
-                  size={32}
-                  className="text-[#1A0F66] dark:text-[#F46707]"
-                />
+            <div className="relative overflow-hidden min-h-[340px] bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
+              <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80')" }} />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
+                  <DraftingCompass
+                    size={32}
+                    className="text-[#1A0F66] dark:text-[#F46707]"
+                  />
+                </div>
+                <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
+                  In-House Design & Engineering
+                </h4>
+                <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
+                  Compliant system design engineered locally to AS 1670 and NCC standards.
+                </p>
               </div>
-              <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
-                In-House Design & Engineering
-              </h4>
-              <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
-                Compliant system design engineered locally to AS 1670 and NCC standards.
-              </p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
-              <div className="w-16 h-16 bg-[#F46707]/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#F46707]/20 transition-colors">
-                <Anvil size={32} className="text-[#F46707]" />
+            <div className="relative overflow-hidden min-h-[340px] bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
+              <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80')" }} />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-16 h-16 bg-[#F46707]/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#F46707]/20 transition-colors">
+                  <Anvil size={32} className="text-[#F46707]" />
+                </div>
+                <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
+                  Local Workshop Fabrication
+                </h4>
+                <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
+                  Custom pipe threading and fabrication at our Mornington workshop, eliminating mainland delays.
+                </p>
               </div>
-              <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
-                Local Workshop Fabrication
-              </h4>
-              <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
-                Custom pipe threading and fabrication at our Mornington workshop, eliminating mainland delays.
-              </p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
-              <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
-                <ClipboardCheck
-                  size={32}
-                  className="text-[#1A0F66] dark:text-[#F46707]"
-                />
+            <div className="relative overflow-hidden min-h-[340px] bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
+              <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80')" }} />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
+                  <ClipboardCheck
+                    size={32}
+                    className="text-[#1A0F66] dark:text-[#F46707]"
+                  />
+                </div>
+                <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
+                  AS 1851 Maintenance
+                </h4>
+                <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
+                  Rigorous lifecycle management, testing, and Uptick-powered digital compliance.
+                </p>
               </div>
-              <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
-                AS 1851 Maintenance
-              </h4>
-              <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
-                Rigorous lifecycle management, testing, and Uptick-powered digital compliance.
-              </p>
             </div>
 
             {/* Card 4 */}
-            <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
-              <div className="w-16 h-16 bg-[#F46707]/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#F46707]/20 transition-colors">
-                <Radio size={32} className="text-[#F46707]" />
+            <div className="relative overflow-hidden min-h-[340px] bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
+              <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=800&q=80')" }} />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-16 h-16 bg-[#F46707]/10 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#F46707]/20 transition-colors">
+                  <Radio size={32} className="text-[#F46707]" />
+                </div>
+                <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
+                  Advanced Detection
+                </h4>
+                <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
+                  Intelligent, networked early warning systems for large-scale and high-risk environments.
+                </p>
               </div>
-              <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
-                Advanced Detection
-              </h4>
-              <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
-                Intelligent, networked early warning systems for large-scale and high-risk environments.
-              </p>
             </div>
 
             {/* Card 5 */}
-            <div className="bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
-              <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
-                <Flame
-                  size={32}
-                  className="text-[#1A0F66] dark:text-[#F46707]"
-                />
+            <div className="relative overflow-hidden min-h-[340px] bg-background border border-border p-10 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group">
+              <div className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition-opacity duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521790797524-b2497295b8a0?w=800&q=80')" }} />
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="w-16 h-16 bg-[#1A0F66]/5 rounded-full flex items-center justify-center mb-8 group-hover:bg-[#1A0F66]/10 transition-colors">
+                  <Flame
+                    size={32}
+                    className="text-[#1A0F66] dark:text-[#F46707]"
+                  />
+                </div>
+                <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
+                  Special Hazard Suppression
+                </h4>
+                <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
+                  Rapid-deployment suppression including Gaseous, VESDA, and Water Mist systems.
+                </p>
               </div>
-              <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">
-                Special Hazard Suppression
-              </h4>
-              <p className="text-foreground/70 leading-relaxed font-light mb-8 flex-grow">
-                Rapid-deployment suppression including Gaseous, VESDA, and Water Mist systems.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Restored Original Components */}
-      <Services />
 
       {/* Certifications & Partnerships Banner */}
       {/* <section className="py-12 overflow-hidden relative border-y border-white/10 bg-[#1A0F66]">

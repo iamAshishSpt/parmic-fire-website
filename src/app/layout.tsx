@@ -12,8 +12,12 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Parmic | Engineered Fire Protection",
-  description: "Design, Fabrication, Installation, and Servicing of advanced fire detection and suppression systems in Tasmania.",
+  title: "Parmic | Commercial Fire Protection & Engineering Tasmania",
+  description: "Tasmania's vertically integrated fire protection specialists. In-house CAD design, local Mornington workshop fabrication, and 24/7 AS1851 maintenance.",
+  icons: {
+    icon: '/fire.png',
+    apple: '/fire.png',
+  },
 };
 
 export default function RootLayout({
