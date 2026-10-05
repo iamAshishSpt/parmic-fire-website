@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import { PenTool, Wrench, ClipboardCheck, Radio, Flame, CheckCircle2 } from 'lucide-react';
 import VisualProductGallery from '@/components/VisualProductGallery';
+
+export const metadata: Metadata = {
+  title: 'Commercial Fire Infrastructure & Services',
+  description: 'Explore Parmic\'s comprehensive fire protection capabilities in Tasmania. Specializing in in-house CAD/BIM design, local Mornington workshop fabrication, advanced detection, and AS1851 maintenance.',
+  openGraph: {
+    title: 'Commercial Fire Infrastructure & Services | Parmic',
+    description: 'End-to-end fire protection in Tasmania: Design, fabrication, installation, and AS1851 compliance.',
+  }
+};
 
 export default function ServicesPage() {
   return (
