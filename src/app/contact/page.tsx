@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   Mail,
   Phone,
@@ -8,6 +11,30 @@ import {
 } from "lucide-react";
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      if (response.ok) {
+        setIsSuccess(true);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <section className="pt-40 pb-24 px-6 md:px-12 lg:px-24">
@@ -169,124 +196,143 @@ export default function ContactPage() {
                   promptly.
                 </p>
 
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="name"
-                        className="text-sm font-bold uppercase tracking-wider text-foreground/70"
-                      >
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
-                        placeholder="John Doe"
-                      />
+                {isSuccess ? (
+                  <div className="py-12 text-center border-t border-border mt-6">
+                    <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="company"
-                        className="text-sm font-bold uppercase tracking-wider text-foreground/70"
-                      >
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
-                        placeholder="Company Name"
-                      />
-                    </div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">Enquiry Sent Successfully</h4>
+                    <p className="text-foreground/70">Our service administration team will review your details and contact you shortly.</p>
                   </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="phone"
-                        className="text-sm font-bold uppercase tracking-wider text-foreground/70"
-                      >
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
-                        placeholder="0400 000 000"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label
-                        htmlFor="email"
-                        className="text-sm font-bold uppercase tracking-wider text-foreground/70"
-                      >
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="projectType"
-                      className="text-sm font-bold uppercase tracking-wider text-foreground/70"
-                    >
-                      Enquiry Type
-                    </label>
-                    <div className="relative">
-                      <select
-                        id="projectType"
-                        defaultValue=""
-                        className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground appearance-none focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
-                      >
-                        <option value="" disabled>
-                          Select an option
-                        </option>
-                        <option value="design">Design</option>
-                        <option value="installation">Installation</option>
-                        <option value="servicing">Servicing</option>
-                        <option value="general">General Enquiry</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-foreground/50">
-                        <svg
-                          className="fill-current h-4 w-4"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="name"
+                          className="text-sm font-bold uppercase tracking-wider text-foreground/70"
                         >
-                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                        </svg>
+                          Full Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
+                          placeholder="John Doe"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="company"
+                          className="text-sm font-bold uppercase tracking-wider text-foreground/70"
+                        >
+                          Company
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
+                          placeholder="Company Name"
+                        />
                       </div>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="message"
-                      className="text-sm font-bold uppercase tracking-wider text-foreground/70"
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="phone"
+                          className="text-sm font-bold uppercase tracking-wider text-foreground/70"
+                        >
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
+                          placeholder="0400 000 000"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label
+                          htmlFor="email"
+                          className="text-sm font-bold uppercase tracking-wider text-foreground/70"
+                        >
+                          Email Address
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
+                          placeholder="john@example.com"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="projectType"
+                        className="text-sm font-bold uppercase tracking-wider text-foreground/70"
+                      >
+                        Enquiry Type
+                      </label>
+                      <div className="relative">
+                        <select
+                          id="projectType"
+                          name="projectType"
+                          defaultValue=""
+                          className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground appearance-none focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all"
+                        >
+                          <option value="" disabled>
+                            Select an option
+                          </option>
+                          <option value="design">Design</option>
+                          <option value="installation">Installation</option>
+                          <option value="servicing">Servicing</option>
+                          <option value="general">General Enquiry</option>
+                        </select>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-foreground/50">
+                          <svg
+                            className="fill-current h-4 w-4"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="message"
+                        className="text-sm font-bold uppercase tracking-wider text-foreground/70"
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={4}
+                        className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all resize-none"
+                        placeholder="How can we help you?"
+                      ></textarea>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#F46707] text-white font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-[#e05e06] transition-colors shadow-lg shadow-[#F46707]/20 mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-[#F46707] focus:ring-1 focus:ring-[#F46707] transition-all resize-none"
-                      placeholder="How can we help you?"
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="button"
-                    className="w-full bg-[#F46707] text-white font-bold uppercase tracking-widest py-4 rounded-lg hover:bg-[#e05e06] transition-colors shadow-lg shadow-[#F46707]/20 mt-4"
-                  >
-                    Submit Enquiry
-                  </button>
-                </form>
+                      {isSubmitting ? "Sending..." : "Submit Enquiry"}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
