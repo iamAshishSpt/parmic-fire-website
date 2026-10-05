@@ -16,14 +16,16 @@ export function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 mb-20">
         {/* Left Side: Accreditations & Logos */}
         <div className="md:w-1/2 flex flex-col gap-8">
-          <Image
-            src="/parmic-logo.webp"
-            alt="Parmic Fire Protection"
-            width={200}
-            height={60}
-            className="h-10 md:h-12 w-auto object-contain block self-start mb-6"
-            priority
-          />
+          <div className="bg-white/95 backdrop-blur-sm px-2 py-1 rounded-lg shadow-sm inline-flex items-center justify-center self-start mb-6">
+            <Image
+              src="/parmic-logo.webp"
+              alt="Parmic Fire Protection"
+              width={240}
+              height={70}
+              className="h-12 md:h-14 w-auto object-contain block"
+              priority
+            />
+          </div>
           <div className="flex flex-col gap-6">
             <h4 className="font-bold uppercase tracking-widest text-sm text-white/50">
               Industry Memberships

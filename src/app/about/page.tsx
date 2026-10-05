@@ -1,6 +1,7 @@
 "use client";
 
-import { Factory, CheckCircle2, ShieldCheck, Award, FileText, ClipboardCheck, Zap } from 'lucide-react';
+import { Factory, CheckCircle2, ShieldCheck, Award, FileText, ClipboardCheck, Zap, Briefcase, DraftingCompass, Users, Wrench } from 'lucide-react';
+import TeamCarousel from '@/components/ui/TeamCarousel';
 
 export default function AboutPage() {
   return (
@@ -58,6 +59,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Our Mornington Team Section */}
+      <TeamCarousel />
 
       {/* Service Commitment & Compliance Section */}
       <section className="py-24 px-6 md:px-12 lg:px-24 bg-background border-t border-border">
