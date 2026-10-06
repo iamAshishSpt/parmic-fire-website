@@ -4,12 +4,12 @@ import { useRef, useState } from "react";
 import { motion, useAnimationFrame, useMotionValue, useTransform } from "framer-motion";
 
 const teamMembers = [
-  { name: "Sarah Jenkins", role: "General Manager", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" },
-  { name: "Emma Davis", role: "Finance Officer", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&q=80" },
-  { name: "Ashish Sapkota", role: "Service Administrator", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" },
-  { name: "James Wilson", role: "Senior CAD Designer", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80" },
-  { name: "Thomas Brown", role: "Junior CAD Designer", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80" },
-  { name: "Michael Clarke", role: "Technician Supervisor", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80" },
+  { name: "Sarah Jenkins", role: "General Manager", image: "https://api.dicebear.com/9.x/notionists/svg?seed=Sarah&backgroundColor=f46707" },
+  { name: "Emma Davis", role: "Finance Officer", image: "https://api.dicebear.com/9.x/notionists/svg?seed=Emma&backgroundColor=f46707" },
+  { name: "Ashish Sapkota", role: "Service Administrator", image: "https://api.dicebear.com/9.x/notionists/svg?seed=Ashish&backgroundColor=f46707" },
+  { name: "James Wilson", role: "Senior CAD Designer", image: "https://api.dicebear.com/9.x/notionists/svg?seed=James&backgroundColor=f46707" },
+  { name: "Thomas Brown", role: "Junior CAD Designer", image: "https://api.dicebear.com/9.x/notionists/svg?seed=Thomas&backgroundColor=f46707" },
+  { name: "Michael Clarke", role: "Technician Supervisor", image: "https://api.dicebear.com/9.x/notionists/svg?seed=Michael&backgroundColor=f46707" },
 ];
 
 export default function TeamCarousel() {
@@ -67,9 +67,13 @@ export default function TeamCarousel() {
               key={index} 
               className="w-[280px] shrink-0 h-[380px] relative rounded-2xl overflow-hidden group border border-white/10 shadow-lg"
             >
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${member.image})` }}
+              <img 
+                src={member.image}
+                alt={member.name}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                onError={(e) => {
+                  e.currentTarget.src = `https://api.dicebear.com/9.x/notionists/svg?seed=fallback&backgroundColor=f46707`;
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
               

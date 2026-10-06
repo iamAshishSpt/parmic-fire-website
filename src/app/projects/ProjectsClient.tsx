@@ -5,6 +5,7 @@ import { MapPin, Building2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
+  // Existing Projects
   { name: "UTAS 430-Apartment Student Accommodation", location: "Hobart CBD", sector: "Education" },
   { name: "The Icon Complex & Myer Store", location: "Hobart CBD", sector: "Retail & Hospitality" },
   { name: "Pumphouse Point Wilderness Retreat", location: "Lake St Clair", sector: "Retail & Hospitality" },
@@ -15,6 +16,14 @@ const projects = [
   { name: "Royal Hobart Hospital Redevelopment", location: "Hobart", sector: "Health" },
   { name: "Bunnings Superstores", location: "Glenorchy & Kingston", sector: "Retail & Hospitality" },
   { name: "Ta Ann's Veneer Mills", location: "Geeveston & Smithton", sector: "Industrial" },
+  
+  // New Contracts from Spreadsheet Data
+  { name: "Kalis Property Group (Black Buffalo & More)", location: "Statewide", sector: "Retail & Hospitality" },
+  { name: "Tasmanian Local Government Councils", location: "Circular Head & Waratah-Wynyard", sector: "Government & Corporate" },
+  { name: "Leighland Christian Schools", location: "Burnie & Ulverstone", sector: "Education" },
+  { name: "ANZ Bank Branches", location: "Kings Meadows & Statewide", sector: "Government & Corporate" },
+  { name: "Mitre 10 Hardware Centers", location: "Hobart & Sorell", sector: "Retail & Hospitality" },
+  { name: "Corumbene Nursing Homes", location: "Derwent Valley", sector: "Health" }
 ];
 
 const sectors = ["All Sectors", "Education", "Retail & Hospitality", "Government & Corporate", "Industrial", "Health"];
@@ -29,7 +38,7 @@ export default function ProjectsClient() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
-      <section className="pt-40 pb-16 px-6 md:px-12 lg:px-24">
+      <section className="pt-40 pb-12 px-6 md:px-12 lg:px-24">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tight text-foreground mb-6">
             Major Projects
@@ -37,6 +46,30 @@ export default function ProjectsClient() {
           <p className="text-xl md:text-2xl text-foreground/80 font-light leading-relaxed">
             A decade of protecting Tasmania’s most critical infrastructure and premium developments.
           </p>
+        </div>
+      </section>
+
+      {/* High-Impact Metrics Banner */}
+      <section className="px-6 md:px-12 lg:px-24 mb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-[#F46707] rounded-2xl p-8 text-white shadow-xl shadow-[#F46707]/20">
+            <div className="text-center flex flex-col items-center">
+              <div className="text-4xl md:text-5xl font-black tracking-tight mb-2">30+</div>
+              <div className="text-xs md:text-sm uppercase tracking-wider font-bold opacity-90 text-center">Years Experience</div>
+            </div>
+            <div className="text-center flex flex-col items-center">
+              <div className="text-4xl md:text-5xl font-black tracking-tight mb-2">24/7</div>
+              <div className="text-xs md:text-sm uppercase tracking-wider font-bold opacity-90 text-center">Emergency Support</div>
+            </div>
+            <div className="flex flex-col items-center justify-center">
+              <h4 className="text-4xl md:text-5xl font-bold text-white mb-2">100%</h4>
+              <p className="text-xs md:text-sm font-bold uppercase tracking-wider text-white/90">Tasmanian Owned</p>
+            </div>
+            <div className="text-center flex flex-col items-center">
+              <div className="text-4xl md:text-5xl font-black tracking-tight mb-2">500+</div>
+              <div className="text-xs md:text-sm uppercase tracking-wider font-bold opacity-90 text-center">Sites Protected</div>
+            </div>
+          </div>
         </div>
       </section>
 
