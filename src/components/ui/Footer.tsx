@@ -93,22 +93,15 @@ export function Footer() {
                   <strong className="block text-white font-semibold mb-1">
                     Mornington HQ & Workshop
                   </strong>
-                  8 Jannah Court, Mornington, TAS
+                  8 Jannah Court, Mornington TAS 7018
                   <br />
                   <span className="opacity-80">PO Box 608, Rosny Park TAS 7018</span>
                 </li>
                 <li>
                   <strong className="block text-white font-semibold mb-1">
-                    Launceston Office
+                    Devonport Warehouse
                   </strong>
-                  Warehouse 5/3 Trotters Lane, Launceston, TAS
-                  <br />
-                  <a
-                    href="tel:+61363448686"
-                    className="hover:text-[#F46707] transition-colors inline-block mt-1"
-                  >
-                    (03) 6344 8686
-                  </a>
+                  246 Kelcey Tier Rd, Spreyton TAS 7310
                 </li>
                 <li>
                   <strong className="block text-white font-semibold mb-1">

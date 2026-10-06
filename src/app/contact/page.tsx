@@ -65,10 +65,10 @@ export default function ContactPage() {
                       General Enquiries
                     </p>
                     <a
-                      href="mailto:service@parmic.com.au"
+                      href="mailto:parmic@parmic.com.au"
                       className="text-lg font-medium text-foreground hover:text-[#F46707] transition-colors"
                     >
-                      service@parmic.com.au
+                      parmic@parmic.com.au
                     </a>
                   </div>
                 </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Launceston Office Card */}
+                {/* Devonport Warehouse Card */}
                 <div className="bg-surface border border-border p-6 rounded-xl hover:border-[#F46707]/30 transition-colors">
                   <Building
                     className="text-[#F46707] mb-4"
@@ -154,7 +154,7 @@ export default function ContactPage() {
                     strokeWidth={1.5}
                   />
                   <h4 className="text-lg font-bold uppercase tracking-tight text-foreground mb-4">
-                    Launceston Office
+                    Devonport Warehouse
                   </h4>
                   <div className="space-y-4 text-foreground/80">
                     <div className="flex items-start gap-3">
@@ -163,9 +163,9 @@ export default function ContactPage() {
                         size={16}
                       />
                       <span className="leading-snug">
-                        Warehouse 5/3 Trotters Lane,
+                        246 Kelcey Tier Rd,
                         <br />
-                        Launceston, TAS
+                        Spreyton, TAS 7310
                       </span>
                     </div>
                     <div className="flex items-start gap-3">
@@ -174,10 +174,10 @@ export default function ContactPage() {
                         size={16}
                       />
                       <a
-                        href="tel:+61363448686"
+                        href="tel:+61362450776"
                         className="hover:text-[#F46707] transition-colors leading-snug"
                       >
-                        +61 3 6344 8686
+                        +61 3 6245 0776
                       </a>
                     </div>
                   </div>
